@@ -1,0 +1,25 @@
+let _cin_: string[] = [];
+try { _cin_ = require("fs").readFileSync(0).toString().split(/\r?\n/); } catch (e) { }
+let input = (): string => _cin_.length === 0 ? "" : _cin_.shift()!;
+let write = (text: any, end: string = "") => process.stdout.write("" + text + end);
+export { };
+
+let num = input().split(" "),
+    n1 = +num[0],
+    n2 = +num[1];
+write("[");
+
+if (n1 < n2) {
+
+    for (let i = n1; i < n2; i++) {
+        write(" " + i);
+    }
+} else {
+
+
+    for (let i = n1; i > n2; i--) {
+        write(" " + i);
+    }
+}
+
+write(" ]\n");
